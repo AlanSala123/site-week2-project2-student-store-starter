@@ -4,7 +4,12 @@ import "./Navbar.css"
 export default function Navbar() {
   return (
     <nav className="navbar">
-      <p>Navbar</p>
+      <ul>
+          <li><a href="/" className="site-home">Home</a></li>
+          <li><a href="/About-Me">About Me</a></li>
+          <li><a href="/Contact-Me">Contact Me</a></li>
+          <li><a href="/Purchase">Purchase</a></li>
+      </ul>
     </nav>
   )
 }
