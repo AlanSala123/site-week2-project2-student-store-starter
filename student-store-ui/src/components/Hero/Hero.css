@@ -1,0 +1,16 @@
+.hero {
+    flex-direction: row;
+    display: flex;
+}
+.content {
+    font-weight: bold;
+    margin-right: 40%;
+    font-family: Monaco;
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5%;
+}
+.bag {
+    width: 10px;
+    height: auto;
+}
