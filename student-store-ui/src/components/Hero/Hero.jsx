@@ -10,7 +10,7 @@ export default function Hero() {
             <p>We have all kinds of goodies.</p>
             </div>
             <div className="bag">
-            <img style = {{width: "200px", height: "auto"}}src="https://logowik.com/content/uploads/images/shopping-bag6504.jpg" />  
+            <img style = {{width: "300px", height: "auto"}}src="https://logowik.com/content/uploads/images/shopping-bag6504.jpg" />  
             </div> 
         </div>
     )

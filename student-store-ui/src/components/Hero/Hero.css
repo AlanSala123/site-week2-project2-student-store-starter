@@ -1,6 +1,9 @@
 .hero {
     flex-direction: row;
     display: flex;
+    text-align: center;
+    margin-left: 40%;
+    font-size: 25px;
 }
 .content {
     font-weight: bold;
@@ -8,9 +11,9 @@
     font-family: Monaco;
     padding: 0px;
     margin: 0px;
-    margin-bottom: 5%;
 }
 .bag {
     width: 10px;
     height: auto;
+    size: 20px;
 }

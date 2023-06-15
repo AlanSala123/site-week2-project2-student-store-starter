@@ -1,12 +1,11 @@
 import * as React from "react"
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
 import { useEffect, useState} from 'react'
 import axios from 'axios'
-import Button from '../Button/button'
 import Hero from "../Hero/Hero"
 
 
@@ -24,10 +23,12 @@ export default function App() {
       setProducts(response.data.products)
     });
   }, []);
-  
+
   return (
     <div className="app">
       <BrowserRouter>
+      <Routes>
+      </Routes>
         <main>
           <Navbar />
           <Sidebar />
