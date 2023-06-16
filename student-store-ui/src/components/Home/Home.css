@@ -12,20 +12,30 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: 0px;
-  max-width: 1500px;
+  justify-content: space-between 100px;
+  grid-gap: 30px;
+  max-width: 90%;
 }
 
 .product img {
-  height: 200px;
-  width: 200px;
+  width: 80%;
+  height: auto;
+  max-height: 300px;
+  border-radius: 25%;
 }
 
 .product {
+  border-style: dashed;
   flex-basis: 22.222%;
-  border: 5px solid #555;
-  padding-right: 0px;
-  max-width: 210px;
+  width: 300px;
+  text-align: center;
+  padding-top: 20px;
+  background-color: #83A0A0;
+  justify-content: space-between 100px;
+  border-radius: 20%;
+  font-family: Monaco;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .About-Me {
@@ -38,6 +48,8 @@
 
 .search-container {
   margin-left: 10%;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
 .Contact-Me {
@@ -56,12 +68,49 @@
   color: white;
   text-align: center;
   height: 300px;
-  background-color: darkgray;
+  background-color: #B2B09B;
+  padding: 50px;
+  display: flex;
+  font-size: 20px;
 }
 
-.list {
-  list-style: none;
+.footer div {
+  text-align: center;
+}
+
+.footer div h3 {
+  font-weight: bold;
+  letter-spacing: 1px;
+  width: 300px;
+}
+
+.column a{
+  display: block;
   text-decoration: none;
-  flex-direction: row;
-  display: flex;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.Button {
+  width: 150px;
+  height: 150px;
+  justify-content: space-between 5px;
+  margin-top: 15px;
+  border-radius: 25%;
+  font-size: 20px;
+  background-color: white;
+  color: black;
+  border: 2px solid #43AA8B;
+  font-weight: Bold;
+  transition-duration: 0.4s;
+}
+
+.Button:hover {
+  background-color: #43AA8B; /* Green */
+  color: white;
+}
+
+input {
+ width: 300px;
+ height: 50px;
 }
