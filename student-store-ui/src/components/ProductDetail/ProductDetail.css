@@ -1,4 +1,21 @@
+.details {
+   text-align: center;
+}
+
 .details img {
     height: 500px;
     width: 500px;
+    margin-top: 5%;
+    border: solid;
+}
+
+.prodDes {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.backLink {
+    font-size: 30px;
+    text-decoration: none;
+    list-style: none;
 }

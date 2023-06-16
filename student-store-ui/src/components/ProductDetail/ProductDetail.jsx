@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react'
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import "./ProductDetail.css"
+import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 
 function ProdDetail() {
 
@@ -15,10 +17,16 @@ function ProdDetail() {
     }, [])
 
     return(
+    <>
         <div className="details">
+        <Navbar />
             <img className ="imgDetails" src={product.image} />
-            <p className="descdet">{product.description}</p>
+            <p className="prodDes">{product.description}</p>
+            <Link to="/">
+                <p className="backLink">Go Back to Home </p>
+            </Link> 
         </div>
+    </>
     )
 }
 

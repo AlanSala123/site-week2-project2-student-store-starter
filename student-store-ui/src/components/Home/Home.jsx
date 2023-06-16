@@ -9,9 +9,12 @@ import ProdGrid from "../ProductGrid/ProductGrid";
 
 
 export default function Home({products}) {
-  const [search, setSearch] = useState("");
-  const [category, setCategory] = useState("");
   
+  //useState for the search and for the category
+  const [search, setSearch] = useState("");
+  const [category, setCategory] = useState("all");
+  
+  //array of the categories
   const categories = [
     "All",
     "Clothing",
@@ -21,12 +24,18 @@ export default function Home({products}) {
   ];
 
   const productFilter = products?.filter((product) => {
+    //input form the search and turn it lower case
     const searchTerm = search.toLowerCase();
-    const productCategory = category.toLowerCase() == "all" ? "" : category.toLowerCase();
+    //category from buttons
+    const SearchCategory = category.toLowerCase();
+    //Get the product name
     const productName = product.name.toLowerCase();
-    const matchesSearch = searchTerm === "" || productName.includes(searchTerm);
-    const matchesCategory = productCategory === "" || product.category?.toLowerCase() === productCategory;
+    //checks if the products matches the search returns true else returns false
+    const matchesSearch = (searchTerm == "" || productName.includes(searchTerm));
+    //checks the product to see if it matches what the user is searching for
+    const matchesCategory = (SearchCategory == "all" || product.category?.toLowerCase() == SearchCategory);
 
+    //return both filters to combine them into one
     return matchesSearch && matchesCategory;
 
   });
@@ -34,19 +43,15 @@ export default function Home({products}) {
   return (
   <>
   <Hero />
+  {/* SearchBar container */}
+  <h1 className="SearchHead">Search Products</h1>
   <div className="search-container">
-  <h1>Search for Products</h1>
-  <input
-      className="SearchBar"
-      type="text"
-      value={search}
-      onChange = {(e) => setSearch(e.target.value)}
-      placeholder="Search!"
-      /><br/>
-      <div className="searchButtons">
-      {categories.map((cat, index) => (
-        <button className="Button"key={index} onClick={() => setCategory(cat)}> {cat} </button>
-      ))}</div>
+  <input className="SearchBar" type="text" value={search} onChange = {(event) => setSearch(event.target.value)} placeholder="Search!"/><br/>
+    
+    {categories.map((cat, index) => (
+      <button className="Button" key={index} onClick={() => setCategory(cat)}> {cat} </button>
+    ))}
+
   </div>
     <div className="home">
       <h1>Purchase</h1>

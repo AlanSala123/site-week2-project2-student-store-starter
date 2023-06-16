@@ -1,11 +1,13 @@
 import * as React from "react"
 import "./Sidebar.css"
-import Button from "../Button/button"
 import { useState } from 'react'
 
 
 export default function Sidebar() {
+
+  //useState for activity of the bar
   const [isActive, setIsActive] = useState(false);
+
   return (
     <section className="sidebar" style={{borderStyle : "solid", width: (isActive ? "30%" : "7.5%")}}>
      
