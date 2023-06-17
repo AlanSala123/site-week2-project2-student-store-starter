@@ -1,5 +1,7 @@
 import React from 'react'
+import "./Contact.css"
 
+//Contact me section of the website
 function Contact() {
     return (
        <>

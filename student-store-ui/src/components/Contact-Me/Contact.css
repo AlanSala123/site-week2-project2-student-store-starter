@@ -1,0 +1,10 @@
+.Contact-Me {
+    font-family: Monaco;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: beige;
+    padding-left: 25%;
+  }

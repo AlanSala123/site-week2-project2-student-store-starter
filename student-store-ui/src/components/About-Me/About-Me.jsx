@@ -1,5 +1,7 @@
 import React from 'react'
+import "./About-Me.css"
 
+//About Me section of My website
 function About() {
     return (
     <div className="About-Me">

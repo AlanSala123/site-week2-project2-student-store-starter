@@ -1,6 +1,7 @@
 import * as React from "react"
 import "./Navbar.css"
 
+//Navigation bar section of the website
 export default function Navbar() {
   return (
     <nav className="navbar">

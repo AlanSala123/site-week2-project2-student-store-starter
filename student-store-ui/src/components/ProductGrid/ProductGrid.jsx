@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom' 
+import "./ProductGrid.css"
 
 function ProdGrid({productFilter}) {
     return(
@@ -10,7 +11,7 @@ function ProdGrid({productFilter}) {
             <div className="product">
              <Link to={"products/" + product.id} >
                 <img src={product.image} />
-                </Link>
+            </Link>
               <p>{product.name}</p>
               <p>{"$"}{product.price}</p>
             </div>)

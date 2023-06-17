@@ -1,6 +1,8 @@
 import react from 'react'
 import "./Hero.css"
 
+
+//Banner Section of the website
 export default function Hero() {
     return (
         <div className="hero">

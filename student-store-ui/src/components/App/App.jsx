@@ -15,16 +15,17 @@ export default function App() {
 //url for the API
   const url = "https://codepath-store-api.herokuapp.com/store"
 
-  //useState
+  //useState for the products
   const[products, setProducts] = useState();
   
+  //fetching the API 
   useEffect(() => {
     axios.get(url).then((response) => {
-      //do stuff with the data
       setProducts(response.data.products)
     });
   }, []);
 
+  //creates the routes 
   return (
     <div className="app">
       <BrowserRouter>

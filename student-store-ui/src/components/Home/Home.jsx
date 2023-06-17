@@ -24,35 +24,42 @@ export default function Home({products}) {
   ];
 
   const productFilter = products?.filter((product) => {
-    //input form the search and turn it lower case
-    const searchTerm = search.toLowerCase();
-    //category from buttons
-    const SearchCategory = category.toLowerCase();
+    //input form the search and category and turn it lower case
+    const searchFor = search.toLowerCase();
+    const SearchCat = category.toLowerCase();
+
     //Get the product name
-    const productName = product.name.toLowerCase();
-    //checks if the products matches the search returns true else returns false
-    const matchesSearch = (searchTerm == "" || productName.includes(searchTerm));
-    //checks the product to see if it matches what the user is searching for
-    const matchesCategory = (SearchCategory == "all" || product.category?.toLowerCase() == SearchCategory);
+    const prodName = product.name.toLowerCase();
+
+    //bool variables that check to see if the search and category match
+    const equalSearch = (searchFor == "" || prodName.includes(searchFor));
+    const equalCat = (SearchCat == "all" ||  SearchCat == product.category?.toLowerCase());
 
     //return both filters to combine them into one
-    return matchesSearch && matchesCategory;
+    return equalSearch && equalCat;
 
   });
 
   return (
   <>
+  
   <Hero />
-  {/* SearchBar container */}
-  <h1 className="SearchHead">Search Products</h1>
+
+  <h1 className="SearchHead"> Search Products </h1>
+
+  
   <div className="search-container">
+
+  {/* Search Bar */}
   <input className="SearchBar" type="text" value={search} onChange = {(event) => setSearch(event.target.value)} placeholder="Search!"/><br/>
     
-    {categories.map((cat, index) => (
-      <button className="Button" key={index} onClick={() => setCategory(cat)}> {cat} </button>
+    {/* mapping through categories array and creating each category button*/}
+    {categories.map((categories, index) => (
+      <button className="Button" key={index} onClick={() => setCategory(categories)}> {categories} </button>
     ))}
-
   </div>
+
+  {/* Components inside the home section of the website */}
     <div className="home">
       <h1>Purchase</h1>
       <ProdGrid productFilter={productFilter} />

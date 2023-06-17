@@ -7,6 +7,7 @@ export default function Sidebar() {
 
   //useState for activity of the bar
   const [isActive, setIsActive] = useState(false);
+  
 
   return (
     <section className="sidebar" style={{borderStyle : "solid", width: (isActive ? "30%" : "7.5%")}}>
@@ -14,9 +15,9 @@ export default function Sidebar() {
      <img src="https://cdn-icons-png.flaticon.com/512/1413/1413908.png" onClick={() => {setIsActive(!isActive)}} style={{height: "30px" }}/>
      
      <div style={{display: isActive ? "" : "none"}}>
-        Name
+        Name 
         <input style={{width: "90%"}} type="text"/>
-        Email
+        Email <br/>
         <input style={{width: "90%"}} type="text"/>
         <input type="checkbox" name="" id="" />
         I agree to the terms and service <br/>

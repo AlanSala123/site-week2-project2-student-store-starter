@@ -1,0 +1,29 @@
+.product-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between 150px;
+    grid-gap: 30px;
+    max-width: 95%;
+  }
+  
+  .product img {
+    width: 80%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 25%;
+  }
+  
+  .product {
+    border-style: dashed;
+    flex-basis: 22.222%;
+    width: 300px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: #83A0A0;
+    justify-content: space-between 100px;
+    border-radius: 20%;
+    font-family: Monaco;
+    font-size: 20px;
+    font-weight: bold;
+  }
