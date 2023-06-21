@@ -4,3 +4,14 @@
     width: 200px;
     position: fixed;
 }
+
+.nameSidebar {
+    width: 70%;
+    height: 50px;
+    border-radius: 25%;
+}
+
+.check {
+    scale: 0.5;
+    width: 50px;
+}

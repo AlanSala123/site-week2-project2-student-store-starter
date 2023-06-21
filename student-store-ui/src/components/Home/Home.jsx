@@ -8,7 +8,7 @@ import Contact from "../Contact-Me/Contact";
 import ProdGrid from "../ProductGrid/ProductGrid";
 
 
-export default function Home({products}) {
+export default function Home({products, shoppingList, setShoppingList}) {
   
   //useState for the search and for the category
   const [search, setSearch] = useState("");
@@ -62,7 +62,7 @@ export default function Home({products}) {
   {/* Components inside the home section of the website */}
     <div className="home">
       <h1>Purchase</h1>
-      <ProdGrid productFilter={productFilter} />
+      <ProdGrid productFilter={productFilter} setShoppingList={setShoppingList} shoppingList={shoppingList}/>
       <h1>About Me </h1>
       <About />
       <h1>Contact Me</h1>
