@@ -7,12 +7,10 @@ function ProdGrid({ productFilter, shoppingList, setShoppingList }) {
 
     //function that adds item to the cart
     function additems(product) {
-
         //increase the quantity of the shoppingList item
         const inCart = shoppingList?.find(item => item.id === product.id)
-
+    
         if (inCart) {
-
             //increment the quantity 
             const updatedCart = shoppingList?.map(item => {
                 if (item?.id == product?.id) {

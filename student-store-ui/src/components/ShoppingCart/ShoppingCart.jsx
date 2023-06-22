@@ -2,13 +2,10 @@ import react from 'react'
 import './ShoppingCart.css'
 import { useState, useEffect } from 'react'
 
-function Shopping_cart({ isActive, shoppingList, setShoppingList }) {
+function Shopping_cart({ isActive, shoppingList, setShoppingList, total, setTotal }) {
 
     //useState if there is products in the cart
     const [isOpen, setIsOpen] = useState(false)
-
-    //useState for the total in the shoppingCart table
-    const[total, setTotal] = useState(0)
 
     useEffect(() => {
         //check to see if we have any items in our cart
@@ -20,6 +17,7 @@ function Shopping_cart({ isActive, shoppingList, setShoppingList }) {
         })
         setIsOpen(tempBool)
 
+        //get the subTotal
         let subTotal = 0
         shoppingList?.map(item => {
             subTotal += item.price * item.quantity;
@@ -62,7 +60,7 @@ function Shopping_cart({ isActive, shoppingList, setShoppingList }) {
                 <span className="subTotal" style={{ display: (isOpen ? "" : "none") }}>
                     <p>{"SubTotal : $"}{total.toFixed(2)}</p>
                     <p>{"Taxes and Fees : $"}{(total.toFixed(2) * 0.0875).toFixed(2)}</p>
-                    <p>{"Total : $"}{+total.toFixed(2) + +(total.toFixed(2) * 0.0875).toFixed(2)}</p>
+                    <p>{"Total : $"}{(+total.toFixed(2) + +(total.toFixed(2) * 0.0875).toFixed(2)).toFixed(2)}</p>
                 </span>
             </div>
         </>

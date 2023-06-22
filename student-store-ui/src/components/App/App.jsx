@@ -16,6 +16,7 @@ export default function App() {
 
   //useState for the products
   const[products, setProducts] = useState();
+  
   //useState for the actual shopping list
   const[shoppingList, setShoppingList] = useState([]);
 

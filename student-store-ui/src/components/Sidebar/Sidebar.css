@@ -3,6 +3,7 @@
     height: 100vh;
     width: 200px;
     position: fixed;
+    overflow: scroll;
 }
 
 .nameSidebar {
