@@ -1,0 +1,26 @@
+.categories {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 5px solid white;
+}
+
+.shoppingItems {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.subTotal {
+    margin-top: 20px;
+    padding-bottom: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.emptyCart {
+    margin-bottom: 30px;
+}
