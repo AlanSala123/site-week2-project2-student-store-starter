@@ -1,10 +1,11 @@
 import react from 'react'
 import './CheckoutInfo.css'
 
-function CheckoutInfo({shoppingList, setShoppingList, checkout, total, setTotal, name, email}) {
-    
+function CheckoutInfo({shoppingList, setShoppingList, checkout, total, setTotal, name, email, setIsCheckout, lastR}) {
+
+
     return (
-    <>
+    <div className="check">
         <h1>Checkout Info</h1>
         <div className="checkInfo" style={{display: checkout ? "" : "none"}}>
         <p>A confirmation email will be sent to you so that you can confirm this order. Once you have confirmed the order, it will be delivered to your dorm room.</p>
@@ -12,7 +13,7 @@ function CheckoutInfo({shoppingList, setShoppingList, checkout, total, setTotal,
         <div className="checkPressed" style={{display: checkout ? "none" : ""}}>
             <p> Receipt </p>
             <p> Showing receipt for {name} avaiable at {email}:</p>
-            {shoppingList?.map(item => {
+            {lastR?.map(item => {
                     return (
                         <>
                             {(item.quantity != 0) ?
@@ -23,8 +24,9 @@ function CheckoutInfo({shoppingList, setShoppingList, checkout, total, setTotal,
                 })}
             <p>Before taxes the subtotal was ${total.toFixed(2)}</p>
             <p>After taxes and fees were applied the total comes out to be ${(+total.toFixed(2) + +(total.toFixed(2) * 0.0875).toFixed(2)).toFixed(2)}</p>
+            <button onClick={() => {setIsCheckout(!checkout)}} > Continue Shopping </button>
         </div>
-    </>   
+    </div>   
 
     )
 }

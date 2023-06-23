@@ -27,7 +27,7 @@ function Shopping_cart({ isActive, shoppingList, setShoppingList, total, setTota
 
   
     return (
-        <>
+        <div className="entireShopping">
             <h1>Shopping Cart</h1>
 
             <div style={{ display: (isOpen ? "none" : "") }}>
@@ -63,7 +63,7 @@ function Shopping_cart({ isActive, shoppingList, setShoppingList, total, setTota
                     <p>{"Total : $"}{(+total.toFixed(2) + +(total.toFixed(2) * 0.0875).toFixed(2)).toFixed(2)}</p>
                 </span>
             </div>
-        </>
+        </div>
     )
 }
 

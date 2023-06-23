@@ -4,6 +4,7 @@
     width: 200px;
     position: fixed;
     overflow: scroll;
+    text-align: center;
 }
 
 .nameSidebar {
@@ -12,7 +13,16 @@
     border-radius: 25%;
 }
 
-.check {
-    scale: 0.5;
-    width: 50px;
+.clearCart {
+    background: aliceblue;
+    padding: 20px;
 }
+
+.checkoutCart {
+    padding: 20px;
+}
+
+.payment {
+    background-color: aliceblue;
+}
+

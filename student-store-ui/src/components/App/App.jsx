@@ -14,20 +14,21 @@ export default function App() {
   //url for the API
   const url = "https://codepath-store-api.herokuapp.com/store"
 
+  const internalUrl = "http://localhost:3001"
+
   //useState for the products
   const[products, setProducts] = useState();
-  
+
   //useState for the actual shopping list
   const[shoppingList, setShoppingList] = useState([]);
 
-
-  
   //fetching the API 
   useEffect(() => {
-    axios.get(url).then((response) => {
-      setProducts(response.data.products)
+    axios.get(internalUrl).then((response) => {
+      setProducts(response.data)
     });
   }, []);
+
 
   //creates the routes 
   return (

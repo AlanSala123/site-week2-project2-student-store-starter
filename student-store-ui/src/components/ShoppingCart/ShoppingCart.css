@@ -1,9 +1,17 @@
+.entireShopping {
+    background-color: aliceblue;
+    padding: 20px;
+}
+
 .categories {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    border: 5px solid white;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
 }
 
 .shoppingItems {
@@ -16,8 +24,12 @@
 
 .subTotal {
     margin-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    border-top: 1px solid white;
     font-weight: bold;
-    color: white;
+}
+
+.subTotal > p {
+    margin-bottom: 5px;
 }
 

@@ -26,4 +26,10 @@
     font-family: Monaco;
     font-size: 20px;
     font-weight: bold;
+    transition: scale 500ms ease-in-out;
+  }
+
+  .product:hover {
+    scale: 1.1;
+    transition: scale 500ms ease-in-out;
   }
