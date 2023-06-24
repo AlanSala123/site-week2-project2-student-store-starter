@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom'
 import "./ProductGrid.css"
 
 function ProdGrid({ productFilter, shoppingList, setShoppingList }) {
-
-
     //function that adds item to the cart
     function additems(product) {
         //increase the quantity of the shoppingList item
         const inCart = shoppingList?.find(item => item.id === product.id)
-    
         if (inCart) {
             //increment the quantity 
             const updatedCart = shoppingList?.map(item => {
@@ -28,7 +25,6 @@ function ProdGrid({ productFilter, shoppingList, setShoppingList }) {
 
     //function that deletes items on the cart
     function deleteItems(product) {
-
         //find the item and decrement the  quantity
         const updatedCart = shoppingList?.map(item => {
             if (item?.id == product?.id) {
@@ -41,6 +37,7 @@ function ProdGrid({ productFilter, shoppingList, setShoppingList }) {
         setShoppingList(updatedCart);
     }
 
+    //gets the quantity of an item in the cart
     function getQuantity(product){
        return shoppingList.map(item => {
             if (item.id === product.id) {

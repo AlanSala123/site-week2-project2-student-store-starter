@@ -1,8 +1,7 @@
-import react from 'react'
 import './ShoppingCart.css'
 import { useState, useEffect } from 'react'
 
-function Shopping_cart({ isActive, shoppingList, setShoppingList, total, setTotal }) {
+function Shopping_cart({shoppingList, total, setTotal }) {
 
     //useState if there is products in the cart
     const [isOpen, setIsOpen] = useState(false)

@@ -4,23 +4,22 @@ import Navbar from "../Navbar/Navbar"
 import Sidebar from "../Sidebar/Sidebar"
 import Home from "../Home/Home"
 import "./App.css"
-import { useEffect, useState} from 'react'
+import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProdDetail from "../ProductDetail/ProductDetail"
 
 
 
 export default function App() {
-  //url for the API
-  const url = "https://codepath-store-api.herokuapp.com/store"
 
+  //API link
   const internalUrl = "http://localhost:3001"
 
   //useState for the products
-  const[products, setProducts] = useState();
+  const [products, setProducts] = useState();
 
   //useState for the actual shopping list
-  const[shoppingList, setShoppingList] = useState([]);
+  const [shoppingList, setShoppingList] = useState([]);
 
   //fetching the API 
   useEffect(() => {
@@ -34,15 +33,15 @@ export default function App() {
   return (
     <div className="app">
       <BrowserRouter>
-      <Routes>
+        <Routes>
           <Route path="" element={
-          <main>
-            <Navbar />
-            <Sidebar products={products} shoppingList={shoppingList} setShoppingList={setShoppingList} />
-            <Home products={products} shoppingList={shoppingList} setShoppingList={setShoppingList}/>
-        </main>}/>
-          <Route path="products/:id" element={<ProdDetail />}/>
-      </Routes>
+            <main>
+              <Navbar />
+              <Sidebar shoppingList={shoppingList} setShoppingList={setShoppingList} />
+              <Home products={products} shoppingList={shoppingList} setShoppingList={setShoppingList} />
+            </main>} />
+          <Route path="products/:id" element={<ProdDetail />} />
+        </Routes>
       </BrowserRouter>
     </div>
   )

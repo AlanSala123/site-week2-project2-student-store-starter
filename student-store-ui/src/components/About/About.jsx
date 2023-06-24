@@ -1,10 +1,10 @@
 import React from 'react'
-import "./About-Me.css"
+import "./About.css"
 
 //About Me section of My website
 function About() {
     return (
-    <div className="About-Me">
+    <div className="About">
         <p>Hello My name is foo bar I am an employee at Salesforce who is looking to create better opportunities for students!</p>
         <p>Everytime something is sold from this store we are helping pay for someone's tuition! </p>
         <p>Come and help students go to college.</p>

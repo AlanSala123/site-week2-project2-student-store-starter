@@ -6,7 +6,7 @@ import CheckoutInfo from "../CheckoutInfo/CheckoutInfo";
 import axios from 'axios'
 
 
-export default function Sidebar({ products, shoppingList, setShoppingList }) {
+export default function Sidebar({shoppingList, setShoppingList }) {
 
   //Last receipt
   const [lastR, setLastR] = useState([]);
@@ -47,42 +47,36 @@ export default function Sidebar({ products, shoppingList, setShoppingList }) {
         <div className="clearCart">
           <button onClick={() => setShoppingList([])}>Clear Cart</button>
         </div>
-    <div className="payment">
-        <h1>Payment Info</h1>
+        <div className="payment">
+          <h1>Payment Info</h1>
+          Name:
+          <input onChange={(event) => {
+            setName(event.target.value)
+            event.preventDefault()
+          }
+          } className="nameSidebar" type="text" placeholder="Add your name!" /><br />
+          Email:
+          <input onChange={(event) => {
+            setEmail(event.target.value)
+            event.preventDefault()
+          }
+          } className="nameSidebar" type="text" placeholder="Add your Email!" /><br />
 
-        Name:
-        <input onChange={(event) => {
-          setName(event.target.value)
-          event.preventDefault()
-        }
-        } className="nameSidebar" type="text" placeholder="Add your name!" /><br />
-
-        Email:
-        <input onChange={(event) => {
-          setEmail(event.target.value)
-          event.preventDefault()
-        }
-        } className="nameSidebar" type="text" placeholder="Add your Email!" /><br />
-
-        <div className="checkoutCart">
-          <button onClick={(event) => {
-            setIsCheckout(!checkout)
-            sendCheckout()
-          }} >Checkout</button>
+          <div className="checkoutCart">
+            <button onClick={(event) => {
+              setIsCheckout(!checkout)
+              sendCheckout()
+            }} >Checkout</button>
+          </div>
         </div>
-    </div>
         <CheckoutInfo
-          shoppingList={shoppingList}
-          setShoppingList={setShoppingList}
           checkout={checkout}
           setIsCheckout={setIsCheckout}
           total={total}
-          setTotal={setTotal}
           name={name}
           email={email}
           lastR={lastR}
         />
-
       </div>
     </section>
   )
