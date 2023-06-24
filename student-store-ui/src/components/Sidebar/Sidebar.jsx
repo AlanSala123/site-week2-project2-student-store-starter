@@ -4,9 +4,10 @@ import { useState } from 'react'
 import Shopping_cart from "../ShoppingCart/ShoppingCart";
 import CheckoutInfo from "../CheckoutInfo/CheckoutInfo";
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 
-export default function Sidebar({shoppingList, setShoppingList }) {
+export default function Sidebar({shoppingList, setShoppingList, name, email, setEmail, setName, TransId, setTransId}) {
 
   //Last receipt
   const [lastR, setLastR] = useState([]);
@@ -30,10 +31,6 @@ export default function Sidebar({shoppingList, setShoppingList }) {
 
   //useState for the total in the shoppingCart table
   const [total, setTotal] = useState(0)
-
-  //useState for the email and the name attributes
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
 
   return (
 
@@ -61,14 +58,18 @@ export default function Sidebar({shoppingList, setShoppingList }) {
             event.preventDefault()
           }
           } className="nameSidebar" type="text" placeholder="Add your Email!" /><br />
-
+          <Link to="receipt">
           <div className="checkoutCart">
             <button onClick={(event) => {
               setIsCheckout(!checkout)
               sendCheckout()
+              setTransId(TransId + 1);
             }} >Checkout</button>
           </div>
+          </Link>
+
         </div>
+
         <CheckoutInfo
           checkout={checkout}
           setIsCheckout={setIsCheckout}
@@ -77,6 +78,7 @@ export default function Sidebar({shoppingList, setShoppingList }) {
           email={email}
           lastR={lastR}
         />
+
       </div>
     </section>
   )

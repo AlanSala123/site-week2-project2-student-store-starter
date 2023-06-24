@@ -13,20 +13,20 @@ function ProdDetail() {
 
     useEffect(() => {
         axios.get(`https://codepath-store-api.herokuapp.com/store/${params.id}`)
-        .then( response => setProducts(response.data.product))
+            .then(response => setProducts(response.data.product))
     }, [])
 
-    return(
-    <>
-        <div className="details">
-        <Navbar />
-            <img className ="imgDetails" src={product.image} />
-            <p className="prodDes">{product.description}</p>
-            <Link to="/">
-                <p className="backLink">Go Back to Home </p>
-            </Link> 
-        </div>
-    </>
+    return (
+        <>
+            <div className="details">
+                <Navbar />
+                <img className="imgDetails" src={product.image} />
+                <p className="prodDes">{product.description}</p>
+                <Link to="/">
+                    <p className="backLink">Go Back to Home </p>
+                </Link>
+            </div>
+        </>
     )
 }
 

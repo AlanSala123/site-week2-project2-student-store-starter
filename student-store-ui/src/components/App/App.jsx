@@ -7,6 +7,7 @@ import "./App.css"
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import ProdDetail from "../ProductDetail/ProductDetail"
+import Receipt from "../Receipt/Receipt"
 
 
 
@@ -20,6 +21,14 @@ export default function App() {
 
   //useState for the actual shopping list
   const [shoppingList, setShoppingList] = useState([]);
+
+  //useState for the email and the name attributes
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+
+    //useState for the transaction ID
+    const [TransId, setTransId] = useState(100)
 
   //fetching the API 
   useEffect(() => {
@@ -37,10 +46,11 @@ export default function App() {
           <Route path="" element={
             <main>
               <Navbar />
-              <Sidebar shoppingList={shoppingList} setShoppingList={setShoppingList} />
+              <Sidebar shoppingList={shoppingList} setShoppingList={setShoppingList} name={name} email={email} setEmail={setEmail} setName={setName} TransId={TransId} setTransId={setTransId} />
               <Home products={products} shoppingList={shoppingList} setShoppingList={setShoppingList} />
             </main>} />
           <Route path="products/:id" element={<ProdDetail />} />
+          <Route path="receipt" element={<Receipt shoppingList={shoppingList} name={name} email={email} TransId={TransId}/>} />
         </Routes>
       </BrowserRouter>
     </div>
